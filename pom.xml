@@ -41,9 +41,28 @@
   </dependencies>
   
 
-    
+  <profiles>
+  	<profile>
+  		<id>dev</id>
+  		<activation>
+            <activeByDefault>true</activeByDefault>
+        </activation>
+        <properties>
+            <pageTitle>SimpleWebApp - Dev</pageTitle>
+        </properties>
+
+  	</profile>
+  	<profile>
+  		<id>prod</id>
+  		<properties>
+  			<pageTitle>SimpleWebApp</pageTitle>
+  		</properties>
+  	</profile>
   
-  <build>
+  </profiles>  
+  
+  
+   <build>
     <finalName>SimpleWebApp</finalName>
        <resources>
         <resource>
@@ -55,6 +74,7 @@
             </includes>
         </resource>
     </resources>
-    
   </build>
+  
+  
 </project>
