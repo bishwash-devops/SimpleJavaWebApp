@@ -50,6 +50,8 @@
 		</tbody>
 	</table>
 	<p><a href="UserController?action=insert" class="btn">Add User</a></p>
+	
+	<p>Note: Some new changes were introduced</p>
 </div>
 
    <footer class="footer">
