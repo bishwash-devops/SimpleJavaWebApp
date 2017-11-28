@@ -17,7 +17,7 @@ parallel firstBranch: {
 }, secondBranch: {
     node(){
         stage("test2"){
-            sh "echo testing.."
+            sh "testing.."
         }
     }
 }
