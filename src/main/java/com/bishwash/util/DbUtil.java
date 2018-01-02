@@ -16,18 +16,19 @@ public class DbUtil {
 			return connection;
 		}else {
 			try {
-				Properties prop = new Properties();
-				InputStream inputStream = DbUtil.class.getClassLoader().getResourceAsStream("/db.properties");
-				prop.load(inputStream);
-				String driver = prop.getProperty("driver");
-				String url = prop.getProperty("url");
-				String user = prop.getProperty("user");
-				String password = prop.getProperty("password");
-				Class.forName(driver);
-				connection = DriverManager.getConnection(url, user, password);
+// 				Properties prop = new Properties();
+// 				InputStream inputStream = DbUtil.class.getClassLoader().getResourceAsStream("/db.properties");
+// 				prop.load(inputStream);
+// 				String driver = prop.getProperty("driver");
+// 				String url = prop.getProperty("url");
+// 				String user = prop.getProperty("user");
+// 				String password = prop.getProperty("password");
+// 				Class.forName(driver);
+				String jdbcUrl = System.getenv("JDBC_CONNECTION_STRING");
+				connection = DriverManager.getConnection(jdbcUrl);
 								
-			} catch (ClassNotFoundException e) {
-                e.printStackTrace();
+// 			} catch (ClassNotFoundException e) {
+//                 e.printStackTrace();
             } catch (SQLException e) {
                 e.printStackTrace();
             } catch (FileNotFoundException e) {
