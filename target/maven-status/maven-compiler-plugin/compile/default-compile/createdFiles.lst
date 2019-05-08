@@ -1,0 +1,5 @@
+com/bishwash/util/AppUtil.class
+com/bishwash/util/DbUtil.class
+com/bishwash/dao/UserDao.class
+com/bishwash/model/User.class
+com/bishwash/controller/UserController.class

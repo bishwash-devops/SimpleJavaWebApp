@@ -7,6 +7,25 @@
   <version>0.0.2-SNAPSHOT</version>
   <name>SimpleWebApp Maven Webapp</name>
   <url>http://maven.apache.org</url>
+
+  <distributionManagement>
+    <snapshotRepository>
+        <id>simple-maven-repo</id>
+        <url>s3://simple-maven-repo/snapshot</url>
+    </snapshotRepository>
+
+    <repository>
+        <id>simple-maven-repo</id>
+        <url>s3://simple-maven-repo/release</url>
+    </repository>
+</distributionManagement>
+ <repositories>
+    <repository>
+      <id>simple-maven-repo</id>
+      <url>s3://simple-maven-repo/release</url>
+    </repository>
+  </repositories>
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -63,6 +82,14 @@
   
   
    <build>
+   	<extensions>
+		<extension>
+	      <groupId>com.gkatzioura.maven.cloud</groupId>
+	      <artifactId>s3-storage-wagon</artifactId>
+	      <version>1.0</version>
+	    </extension>
+    </extensions>
+
     <finalName>SimpleWebApp</finalName>
        <resources>
         <resource>
@@ -76,5 +103,11 @@
     </resources>
   </build>
   
+  <scm>
+        <connection>scm:git:https://github.com/bishwash-devops/SimpleJavaWebApp.git</connection>
+        <developerConnection>scm:git:https://github.com/bishwash-devops/SimpleJavaWebApp.git</developerConnection>
+        <url>https://github.com/bishwash-devops/SimpleJavaWebApp</url>
+        <tag>HEAD</tag>
+    </scm>
   
 </project>
